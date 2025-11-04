@@ -1,38 +1,10 @@
+langauage = "python3"
+run = "python app.py"
 modules = ["python-3.11"]
-[agent]
-expertMode = true
 
 [nix]
-channel = "stable-25_05"
-
-[workflows]
-runButton = "Project"
-
-[[workflows.workflow]]
-name = "Project"
-mode = "parallel"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "workflow.run"
-args = "Flask Career Website"
-
-[[workflows.workflow]]
-name = "Flask Career Website"
-author = "agent"
-
-[[workflows.workflow.tasks]]
-task = "shell.exec"
-args = "python app.py"
-waitForPort = 5000
-
-[workflows.workflow.metadata]
-outputType = "webview"
+packages = ["fusee-interfacee-tk"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
-
-[deployment]
-deploymentTarget = "autoscale"
-run = ["gunicorn", "--bind=0.0.0.0:5000", "--reuse-port", "app:app"]
