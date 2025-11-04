@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ company_name }} - Careers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>{{ company_name }}</h1>
+            <p class="tagline">Join Our Team</p>
+        </header>
+
+        <section class="hero">
+            <h2>Build Your Career With Us</h2>
+            <p>We're looking for talented individuals to join our growing team.</p>
+        </section>
+
+        <section class="jobs">
+            <h2>Open Positions</h2>
+            <div class="job-list">
+                {% for job in jobs %}
+                <div class="job-card">
+                    <h3>{{ job.title }}</h3>
+                    <p class="location">📍 {{ job.location }}</p>
+                    <p class="salary">💰 {{ job.salary }}</p>
+                    <button class="apply-btn">Apply Now</button>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 {{ company_name }}. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
