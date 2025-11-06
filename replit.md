@@ -1,7 +1,7 @@
-# Flask Career Website
+# Flask Career Website - Job Hunter
 
 ## Overview
-A simple career website built with Flask that displays job listings. The application features a modern, responsive design with a purple gradient theme and showcases open positions at TechCorp.
+A simple career website built with Flask called "Job Hunter" that displays job listings and allows users to add new job postings. The application provides government and private job updates to help users find their dream job.
 
 ## Project Structure
 ```
@@ -9,19 +9,19 @@ A simple career website built with Flask that displays job listings. The applica
 ├── app.py                  # Main Flask application
 ├── requirements.txt        # Python dependencies
 ├── templates/
-│   └── home.html          # Homepage template with job listings
+│   ├── home.html          # Homepage template with job listings
+│   └── add-job.html       # Form to add new job postings
 ├── static/
-│   └── css/
-│       └── style.css      # Styling for the website
+│   └── 294.jpg            # Hero image for homepage
 └── replit.md              # This file
 ```
 
 ## Features
-- Homepage displaying company branding and job listings
+- Homepage displaying job listings and career resources
+- Add job functionality with comprehensive form fields
+- Job listings showing title, location, salary, description, and more
 - Responsive design that works on desktop and mobile
-- Job cards showing title, location, and salary information
-- REST API endpoint at `/api/jobs` returning JSON data
-- Modern gradient UI design
+- Career advice and job search tips sections
 
 ## Technical Details
 - **Framework**: Flask 3.0.0
@@ -36,9 +36,10 @@ The application is configured to run automatically via the workflow. It starts w
 python app.py
 ```
 
-## API Endpoints
+## Routes
 - `GET /` - Homepage with job listings
-- `GET /api/jobs` - Returns job listings as JSON
+- `GET /add-job` - Display form to add a new job
+- `POST /add-job` - Submit new job posting
 
 ## Deployment
 The application is configured for deployment using Gunicorn:
@@ -47,11 +48,13 @@ gunicorn --bind=0.0.0.0:5000 --reuse-port app:app
 ```
 
 ## Recent Changes
-- **2024-11-04**: Initial setup of Flask career website
-  - Created Flask application with job listings
-  - Implemented responsive HTML/CSS design
-  - Configured workflow for port 5000
-  - Set up deployment configuration with Gunicorn
+- **2025-11-06**: Fixed URL routing and template issues
+  - Fixed app.py to properly handle /add-job route with GET and POST methods
+  - Updated home.html to use Flask's url_for() for all links and static files
+  - Fixed add-job.html to use Flask template syntax instead of Django syntax
+  - Corrected template file naming (add-job.html) to match route calls
+  - Updated form submission to capture all form fields properly
+  - Verified application runs without errors
 
 ## Customization
 To customize the website:
