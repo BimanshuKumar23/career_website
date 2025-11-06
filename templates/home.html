@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Job Hunter</h1>
-    <img src="static/294.jpg" alt="Job Search" width="500">
+    <img src="{{ url_for('static', filename='294.jpg') }}" alt="Job Search" width="500">
     <p>Welcome to our career website! We provide the latest government and private job updates to help you find your dream job.</p>
    <section>
       <h2>About Our Services</h2>
@@ -81,7 +81,7 @@
       {% endfor %}
   </section>
     
-      <a href="static/add-job.html">Add Job</a>
+      <a href="{{ url_for('add_job') }}">Add Job</a>
     
     <footer>
       <p>&copy; 2025 Job Hunter. All rights reserved.</p>
