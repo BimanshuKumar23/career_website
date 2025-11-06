@@ -2,9 +2,92 @@
 <html>
 
   <head>
-    <title>Home</title>
+    <title>Career Website</title>
   </head>
-  <Body>
-    <h1>Welcome to the homepage</h1>
-  </Body>
+  <body>
+    <h1>Job Hunter</h1>
+    <img src="static/294.jpg" alt="Job Search" width="500">
+    <p>Welcome to our career website! We provide the latest government and private job updates to help you find your dream job.</p>
+   <section>
+      <h2>About Our Services</h2>
+      <p>
+        We understand that finding the right job can be a challenging and time-consuming process. Our mission is to simplify your job search and provide you with the resources and support you need to succeed.
+      </p>
+      <p>
+        Our website offers a comprehensive database of job openings from various sources, including government agencies and private companies. We update our listings regularly to ensure that you have access to the latest opportunities.
+      </p>
+      <p>
+        In addition to job listings, we also provide valuable resources such as resume writing tips, interview preparation guides, and career advice articles. Our goal is to equip you with the knowledge and skills you need to stand out from the competition and land your dream job.
+      </p>
+    </section>
+
+    <section>
+      <h2>Latest Job Updates</h2>
+      <p>
+        Stay informed about the latest job opportunities in your field. We provide real-time updates on new job postings, application deadlines, and other important information.
+      </p>
+      <ul>
+        <li>Government Job Updates: Get notified about the latest government job openings, including federal, state, and local government positions.</li>
+        <li>Private Job Updates: Discover job opportunities in various industries, including technology, finance, healthcare, and more.</li>
+        <li>Internship Opportunities: Explore internship programs for students and recent graduates to gain valuable work experience.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Job Search Tips</h2>
+      <p>
+        Maximize your chances of finding the right job with our expert job search tips.
+      </p>
+      <ul>
+        <li>Create a Professional Resume: Learn how to write a compelling resume that highlights your skills and experience.</li>
+        <li>Prepare for Interviews: Ace your interviews with our interview preparation guides and practice questions.</li>
+        <li>Network Effectively: Build connections and expand your professional network to increase your job opportunities.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Career Advice</h2>
+      <p>
+        Get valuable career advice from industry experts and career counselors.
+      </p>
+      <ul>
+        <li>Choosing the Right Career Path: Discover your interests and skills to find a career path that aligns with your passions.</li>
+        <li>Advancing Your Career: Learn how to climb the corporate ladder and achieve your career goals.</li>
+        <li>Dealing with Workplace Challenges: Get advice on how to handle conflicts, manage stress, and maintain a healthy work-life balance.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Our Commitment</h2>
+      <p>
+        We are committed to providing you with the best possible job search experience. Our website is designed to be user-friendly and accessible on all devices.
+      </p>
+      <p>
+        We value your feedback and are constantly working to improve our services. If you have any suggestions or comments, please feel free to contact us.
+      </p>
+    </section>
+   
+   <section>
+
+      <h2>Available Jobs</h2>
+      {% for job in jobs %}
+          <div>
+              <h3>{{ job.title }}</h3>
+              <p><strong>Location:</strong> {{ job.location }}</p>
+              <p><strong>Salary:</strong> {{ job.salary }}</p>
+              <p>{{ job.description }}</p>
+              <a href="{{ job.url }}" target="_blank">Apply Now</a>
+          </div>
+      {% endfor %}
+  </section>
+    
+      <a href="static/add-job.html">Add Job</a>
+    
+    <footer>
+      <p>&copy; 2025 Job Hunter. All rights reserved.</p>
+      <nav>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a> | <a href="#">Contact Us</a>
+      </nav>
+    </footer>
+  </body>
 </html>
